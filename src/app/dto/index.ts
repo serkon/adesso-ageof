@@ -27,29 +27,30 @@ export enum FilterType {}
 
 // Project Interfaces
 
-interface Unit {
+export interface Unit {
   id: number;
   name: string;
   description: string;
   expansion: string;
   age: string;
   cost: {
-    Wood: number;
-    Gold: number;
-  };
-  build_time: number;
-  reload_time: number;
-  attack_delay: number;
-  movement_rate: number;
+    Wood?: number;
+    Gold?: number;
+    Food?: number;
+  } | null;
+  build_time?: number;
+  reload_time?: number;
+  attack_delay?: number;
+  movement_rate?: number;
   line_of_sight: number;
   hit_points: number;
-  range: number;
-  attack: number;
+  range?: number | string;
+  attack?: number;
   armor: string;
   attack_bonus?: string[];
-  accuracy: string;
+  accuracy?: string;
 }
 
-interface Units {
+export interface Units {
   units: Unit[];
 }
