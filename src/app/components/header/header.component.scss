@@ -1,0 +1,24 @@
+::ng-deep {
+  :root {
+    --header-height: 4.625rem;
+  }
+}
+
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--header-height);
+  width: 100%;
+  box-shadow: 0 0 1px rgba(40, 41, 61, 1%), 0 0 1px rgba(40, 41, 61, 16%), 0 4px 20px rgba(96, 97, 112, 32%);
+  background-color: white;
+  user-select: none;
+
+  header {
+    display: flex;
+    gap: 1.5rem;
+  }
+}

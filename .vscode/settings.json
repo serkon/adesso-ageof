@@ -1,0 +1,119 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "helium-icon-theme",
+  "git.autofetch": true,
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "workbench.list.smoothScrolling": true,
+  "window.nativeTabs": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "scss", "vue"],
+  "stylelint.enable": true,
+  "files.autoSave": "onFocusChange",
+  "files.defaultLanguage": "typescript",
+  "files.autoSaveDelay": 1000,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.fixAll": true,
+    "source.organizeImports": false,
+    "source.sortMembers": true
+  },
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.run": "onType",
+  "eslint.validate": ["vue", "typescript", "javascript", "javascriptreact", "typescriptreact", "json", "jsonc"],
+  "eslint.lintTask.options": "--ext .ts,.html",
+  "eslint.options": {
+    "extensions": [".ts", ".html"]
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.editor.showIcons": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[html]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
+  "editor.suggestSelection": "first",
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // "typescript.suggest.paths": false,
+  // "javascript.suggest.paths": false,
+  "editor.fontSize": 12,
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorCustomizations": {
+    "[One Dark Pro]": {
+      "editorBracketHighlight.foreground1": "#e78009",
+      "editorBracketHighlight.foreground2": "#22990a",
+      "editorBracketHighlight.foreground3": "#1411c4",
+      "editorBracketHighlight.foreground4": "#ddcf11",
+      "editorBracketHighlight.foreground5": "#9c15c5",
+      "editorBracketHighlight.foreground6": "#ffffff",
+      "editorBracketHighlight.unexpectedBracket.foreground": "#FF2C6D"
+    }
+  },
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "prompt",
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "explorer.compactFolders": false
+}

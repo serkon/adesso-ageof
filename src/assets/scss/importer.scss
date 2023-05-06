@@ -1,0 +1,26 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+
+/* Importing fonts from google fonts and bootstrap icons. */
+
+// @import 'https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap';
+// @import 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap';
+
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap';
+@import 'global';
+
+/**
+ * Bootstrap Configuration
+ *
+ * To change default SCSS configuration of the bootstrap please look the configuration variables from below link
+ * @import "bootstrap/scss/variables";
+ */
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/bootstrap'; // grid, colors and other variables must be loaded before bootstrap.scss
