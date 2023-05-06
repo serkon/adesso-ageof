@@ -1,3 +1,10 @@
 <div class="container">
-  <header> header </header>
+  <header>
+    <img src="/assets/images/logo.png" alt="logo" class="logo" />
+    <aside class="actions d-flex gap-2">
+      <ng-container *ngFor="let link of links">
+        <button [routerLink]="link.path" routerLinkActive="active" class="btn btn-warning">{{ link.name }}</button>
+      </ng-container>
+    </aside>
+  </header>
 </div>

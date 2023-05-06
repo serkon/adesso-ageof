@@ -4,7 +4,6 @@
 
 :host {
   display: flex;
-  margin-top: 4rem;
 
   @include media-breakpoint-down(xl) {
     footer {

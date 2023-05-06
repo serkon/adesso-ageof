@@ -1,0 +1,152 @@
+
+Angular Frontend Challenge
+Inbox
+
+Moroglu, Ilksen <Ilksen.Moroglu@adesso.com.tr>
+Attachments
+May 5, 2023, 12:16 PM (1 day ago)
+to me, Kiryako, Aysen
+
+   
+Translate message
+Turn off for: Turkish
+Serkan merhaba,
+
+ 
+
+Görüşmemize istinaden code challenge’ı aşağıda paylaşıyorum. Bu challenge’ı 12.05.2023 Cuma  gününe kadar tamamlayıp github repository link’ini bizimle paylaşmanı rica ederiz.
+
+ 
+
+Sizden Age of Empires Birimlerinin listelendiği bir angular uygulaması istiyoruz.
+
+ 
+
+Development koşulları:
+
+ 
+
+Proje Angular (8 veya sonrası) ile geliştirilecek
+State Management için NgRx / NGXS kullanılmalı.
+Angular “pipe” ları kullanılmayacak.
+Router kullanılacak.
+Stil olarak herhangi bir library kullanılabilir.
+Stil dili olarak scss kullanılacak.
+Eslint kullanılacak (default kuralları geçmesi yeterli)
+%80 test coverage olacak.
+ 
+
+ Sayfalar:
+
+ 
+
+Anasayfa
+Birimler sayfası
+Birim detay sayfası
+ 
+
+Anasayfa
+
+ 
+
+Kullanıcı anasayfada sadece bir resim görecek. İstediğiniz bir resmi kullanabilirsiniz. Sağ üst köşede mockup’ta görünen linkler olacak.
+
+ 
+
+Birimler Sayfası
+
+ 
+
+Birimler sayfasında kullanıcı json dosyasındaki birimleri listeleyecek.
+
+Sağ üst köşede mockup'ta görünen olacak.
+
+Birimler listesinin üzerinde filtreleme alanları olacak.
+
+İki tür filtreleme olacak. Filtreler combine edilebilecek.
+
+ 
+
+Ages Filtresi:
+
+Toplam 4 adet çağ var ve bu çağlar sırası ile “Dark”, “Feudal”, “Castle” ve “Imperial”.
+
+Her birimin minimum gereksinim duyduğu bir çağ var.
+
+Kullanıcının seçtiği çağ’a göre liste filtrelenecek.
+
+Kullanıcı isterse “All” opsiyonunu seçip minimum çağ gereksinimini discard edip tüm birimleri listeletebilir.
+
+Default olarak “All” opsiyonu seçili gelecek.
+
+ 
+
+Costs Filtresi:
+
+Birimler minimum maksimum costlara göre filtrelenebilecek.
+
+Cost tipleri: “Food”, “Wood” ve “Gold”
+
+Kullanıcı isterse cost türlerinin yanındaki checkbox’ları check ederek, cost tipine göre filtrelemeyi kullanabilecek.
+
+Default olarak tüm tipler unchecked gelecek.
+
+Kullanıcı bir cost tipini check ettiğinde yanındaki range selector enable edilecek ve kullanıcı bir cost aralığı seçebilecek.
+
+Seçilen cost aralığına göre birimler filtrelenecek.
+
+Aynı anda birden fazla cost tipi aktif edilebilir.
+
+Cost range’i minimum 0, maksimum 200 Dür.
+
+ 
+
+Liste:
+
+Birimler bir tabloda listelenecek.
+
+Kullanıcının değiştirdiği filtrelere göre liste anlık güncellenecek.
+
+Kullanıcı listedeki bir birime tıkladığında üzerine tıkladığı birimin detay sayfasına yönlendirilecek.
+
+ 
+
+Birim Detay Sayfası
+
+ 
+
+Kullanıcının seçtiği birimin detayları bu sayfada gösterilecek.
+
+Mockup’ta belirtilen birim detayları bu sayfada gösterilecek.
+
+ 
+
+KVKK Aydınlatma Metni: https://www.adesso.com.tr/en/jobs-career/kvkk/index.jsp
+
+Lütfen tarafımıza ilettiğiniz özgeçmiş bilgileri içerisinde 6698 Sayılı Kişisel Verilerin Korunması Kanunu’nun 6. Maddesi uyarınca sayılan sağlık bilgisi, dernek üyelik bilgileri vb. gibi özel nitelikli kişisel verilerin yer almadığından emin olunuz.
+
+Sizlere ait bu tip hassas bilgiler konusunda adesso olarak büyük bir özen göstermekteyiz
+
+ 
+
+ 
+
+İlksen Moroğlu
+Senior Talent Acquisition Specialist
++90 549 836 24 87
+
+adesso.com.tr https://www.adesso.com.tr/adesso-com-tr/download/signature/06122021/link.png
+
+adesso Turkey, Maslak Mah. Ahi Evran Cad.
+Olive Plaza No:11 Kat:9 34398 Sarıyer İstanbul
+
+Instagram
+
+Twitter
+
+LinkedIn
+
+Medium
+
+adesso Logo
+

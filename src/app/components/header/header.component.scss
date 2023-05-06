@@ -13,12 +13,19 @@
   justify-content: center;
   min-height: var(--header-height);
   width: 100%;
-  box-shadow: 0 0 1px rgba(40, 41, 61, 1%), 0 0 1px rgba(40, 41, 61, 16%), 0 4px 20px rgba(96, 97, 112, 32%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 80%);
   background-color: white;
   user-select: none;
 
   header {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #545454;
     gap: 1.5rem;
+
+    .logo {
+      height: 32px;
+    }
   }
 }
