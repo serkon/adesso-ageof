@@ -70,7 +70,6 @@ export class UnitsComponent implements OnInit {
   */
 
   filter(): void {
-    console.log('sdsd');
     this.filtered = this.filterByAge(this.units);
     this.filtered = this.filterByCost(this.filtered);
   }
