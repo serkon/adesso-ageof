@@ -1,9 +1,12 @@
 <div class="container pt-4 d-flex flex-column justify-content-between">
   <div class="actions d-flex justify-content-between">
     <button class="btn btn-outline-primary me-auto" (click)="back()"><-</button>
-    <div class="btn-group" role="group" aria-label="Basic outlined example">
-      <button type="button" class="btn btn-outline-primary" (click)="previous()" [disabled]="(unitId$ | async) === 0"><</button>
-      <button type="button" class="btn btn-outline-primary" (click)="next()" [disabled]="!isOverloaded(unitId$ | async, units$ | async)">></button>
+    <div class="d-flex gap-2 align-items-center">
+      <span class="fw-bold">Current: {{ calculatedUnitId$ | async }} / Total {{ (units$ | async)?.length }}</span>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary" (click)="previous()" [disabled]="(unitId$ | async) === 0"><</button>
+        <button type="button" class="btn btn-outline-primary" (click)="next()" [disabled]="!isOverloaded(unitId$ | async, units$ | async)">></button>
+      </div>
     </div>
   </div>
   <ng-container *ngIf="unit$ | async as unit; else noUnit">

@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Unit } from '@src/app/dto';
 import { getUtilById } from '@src/app/store/actions';
 import { selectSelectedUnit, selectSelectedUnitIndex, selectUnits } from '@src/app/store/reducers';
-import { Observable, Subscription } from 'rxjs';
+import { map, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-detail',
@@ -16,6 +16,7 @@ export class DetailComponent implements OnDestroy {
   public units$: Observable<Unit[]> = this.store.select(selectUnits);
   public unitId$: Observable<number> = this.store.select(selectSelectedUnitIndex);
   public labels: string[] = [];
+  public calculatedUnitId$: Observable<number> = this.unitId$.pipe(map((id) => id + 1));
   private unitSubscription: Subscription;
 
   constructor(private store: Store, private location: Location) {

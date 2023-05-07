@@ -1,6 +1,7 @@
 ::ng-deep {
   :root {
     --header-height: 4.625rem;
+    --image-height: 3.5rem;
   }
 }
 
@@ -25,7 +26,11 @@
     gap: 1.5rem;
 
     .logo {
-      height: 32px;
+      height: var(--image-height);
+
+      img {
+        height: 100%;
+      }
     }
   }
 }
