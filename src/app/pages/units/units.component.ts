@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Unit } from '@src/app/dto';
+import { Store } from '@ngrx/store';
+import { filterByCost, setUnits } from '@src/app/store/actions';
+import { selectFiltered, selectUnits } from '@src/app/store/reducers';
 import { default as AOE } from '@src/assets/data/age-of-empires-units.json';
 
 export interface Cost {
@@ -14,8 +16,10 @@ export interface Cost {
   styleUrls: ['./units.component.scss'],
 })
 export class UnitsComponent implements OnInit {
+  public units$ = this.store.select(selectUnits);
+  public filtered$ = this.store.select(selectFiltered);
   public ages: string[] = ['Dark', 'Feudal', 'Castle', 'Imperial'];
-  public selected: { ages: string[]; costs?: Cost[] } = {
+  public selected: { ages: string[]; costs: Cost[] } = {
     ages: [],
     costs: [
       { label: 'Wood', value: 0, status: false },
@@ -24,12 +28,12 @@ export class UnitsComponent implements OnInit {
     ],
   };
 
-  public units: Unit[] = AOE.units;
-  public filtered: Unit[] = [];
+  constructor(private store: Store) {
+    this.store.dispatch(setUnits({ value: AOE.units }));
+  }
 
   ngOnInit(): void {
-    this.selected.ages = structuredClone(this.ages);
-    this.filtered = structuredClone(this.units);
+    this.selected.ages = [...this.ages];
     this.filter();
   }
 
@@ -40,9 +44,8 @@ export class UnitsComponent implements OnInit {
   }
 
   /*
-  Age Filters Selections
+  Age Filters Section
   */
-
   onAgeFilter(age: string): void {
     this.selected.ages.includes(age) ? this.selected.ages.splice(this.selected.ages.indexOf(age), 1) : this.selected.ages.push(age);
     this.filter();
@@ -58,27 +61,10 @@ export class UnitsComponent implements OnInit {
   }
 
   /*
-  Cost Filter Selections
-  */
-
-  toggleCostStatus(cost: Cost): void {
-    this.selected.costs?.forEach((c) => c.label === cost.label && (c.status = !c.status));
-  }
-
-  /*
   Filtering Operations
   */
-
   filter(): void {
-    this.filtered = this.filterByAge(this.units);
-    this.filtered = this.filterByCost(this.filtered);
-  }
-
-  filterByAge(array: Unit[]): Unit[] {
-    return array.filter((unit) => this.selected.ages.includes(unit.age));
-  }
-
-  filterByCost(array: Unit[]): Unit[] {
-    return array.filter((unit) => this.selected.costs?.every((c) => (c.status ? unit.cost && (unit.cost as any)[c.label] >= c.value : true)));
+    const { costs, ages } = structuredClone(this.selected);
+    this.store.dispatch(filterByCost({ ages, costs }));
   }
 }
