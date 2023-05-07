@@ -65,6 +65,7 @@ export const unitReducer = createReducer(
 
 export const selectUnitState = createFeatureSelector<UnitState>('unit');
 export const selectUnits = createSelector(selectUnitState, (state: UnitState) => state.units);
+export const selectFilteredUnits = createSelector(selectUnitState, (state: UnitState) => state.filtered);
 export const selectFiltered = createSelector(selectUnitState, (state: UnitState) => state.filtered);
 export const selectSelectedUnit = createSelector(selectUnitState, (state: UnitState) => state.selected);
 export const selectSelectedUnitIndex = createSelector(selectUnitState, (state: UnitState) => state.index);

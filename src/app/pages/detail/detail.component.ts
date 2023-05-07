@@ -3,7 +3,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Unit } from '@src/app/dto';
 import { getUtilById } from '@src/app/store/actions';
-import { selectSelectedUnit, selectSelectedUnitIndex, selectUnits } from '@src/app/store/reducers';
+import { selectFilteredUnits, selectSelectedUnit, selectSelectedUnitIndex } from '@src/app/store/reducers';
 import { map, Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -13,7 +13,7 @@ import { map, Observable, Subscription } from 'rxjs';
 })
 export class DetailComponent implements OnDestroy {
   public unit$: Observable<Unit | null> = this.store.select(selectSelectedUnit);
-  public units$: Observable<Unit[]> = this.store.select(selectUnits);
+  public selectFilteredUnits: Observable<Unit[]> = this.store.select(selectFilteredUnits);
   public unitId$: Observable<number> = this.store.select(selectSelectedUnitIndex);
   public labels: string[] = [];
   public calculatedUnitId$: Observable<number> = this.unitId$.pipe(map((id) => id + 1));

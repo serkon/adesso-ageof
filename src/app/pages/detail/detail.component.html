@@ -2,10 +2,10 @@
   <div class="actions d-flex justify-content-between">
     <button class="btn btn-outline-primary me-auto" (click)="back()"><-</button>
     <div class="d-flex gap-2 align-items-center">
-      <span class="fw-bold">Current: {{ calculatedUnitId$ | async }} / Total {{ (units$ | async)?.length }}</span>
+      <span class="fw-bold" *ngIf="(selectFilteredUnits | async)?.length">Current: {{ calculatedUnitId$ | async }} / Total {{ (selectFilteredUnits | async)?.length }}</span>
       <div class="btn-group" role="group" aria-label="Basic outlined example">
         <button type="button" class="btn btn-outline-primary" (click)="previous()" [disabled]="(unitId$ | async) === 0"><</button>
-        <button type="button" class="btn btn-outline-primary" (click)="next()" [disabled]="!isOverloaded(unitId$ | async, units$ | async)">></button>
+        <button type="button" class="btn btn-outline-primary" (click)="next()" [disabled]="!isOverloaded(unitId$ | async, selectFilteredUnits | async)">></button>
       </div>
     </div>
   </div>
