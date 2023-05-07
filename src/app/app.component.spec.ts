@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { FooterModule } from './components/footer/footer.module';
@@ -12,7 +13,7 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, HttpClientModule, HeaderModule, FooterModule],
+      imports: [RouterTestingModule, HttpClientModule, HeaderModule, FooterModule, StoreModule.forRoot({})],
       providers: [],
       declarations: [AppComponent],
     }).compileComponents();
