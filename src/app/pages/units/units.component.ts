@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { filterByCost, setUnits } from '@src/app/store/actions';
+import { Unit } from '@src/app/dto';
+import { filterByCost, selectUnit, setUnits } from '@src/app/store/actions';
 import { selectFiltered, selectUnits } from '@src/app/store/reducers';
 import { default as AOE } from '@src/assets/data/age-of-empires-units.json';
 
@@ -28,7 +30,7 @@ export class UnitsComponent implements OnInit {
     ],
   };
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private router: Router) {
     this.store.dispatch(setUnits({ value: AOE.units }));
   }
 
@@ -66,5 +68,13 @@ export class UnitsComponent implements OnInit {
   filter(): void {
     const { costs, ages } = structuredClone(this.selected);
     this.store.dispatch(filterByCost({ ages, costs }));
+  }
+
+  /**
+   Navigate
+   */
+  selectAndNavigate(unit: Unit, index: number): void {
+    this.store.dispatch(selectUnit({ value: unit, index }));
+    this.router.navigate(['/detail']);
   }
 }

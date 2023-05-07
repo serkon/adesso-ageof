@@ -29,7 +29,7 @@
   <ng-container *ngIf="filtered$ | async as filtered">
     <section class="list pt-5">
       <div class="fst-italic fw-light"> <b>Total:</b> {{ filtered.length }} units</div>
-      <table class="table table-bordered" aria-describedby="'units-table'">
+      <table class="table table-bordered table-hover" aria-describedby="'units-table'">
         <thead class="table-light">
           <tr>
             <th>Id</th>
@@ -40,7 +40,7 @@
         </thead>
         <tbody>
           <ng-container *ngIf="filtered.length > 0; else noResults">
-            <tr *ngFor="let unit of filtered">
+            <tr *ngFor="let unit of filtered; let i = index" (click)="selectAndNavigate(unit, i)">
               <td>{{ unit.id }}</td>
               <td>{{ unit.name }}</td>
               <td>{{ unit.age }}</td>

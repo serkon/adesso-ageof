@@ -1,1 +1,24 @@
-<p>detail works!</p>
+<div class="container pt-4 d-flex flex-column justify-content-between">
+  <div class="actions d-flex justify-content-between">
+    <button class="btn btn-outline-primary me-auto" (click)="back()"><-</button>
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+      <button type="button" class="btn btn-outline-primary" (click)="previous()" [disabled]="(unitId$ | async) === 0"><</button>
+      <button type="button" class="btn btn-outline-primary" (click)="next()" [disabled]="!isOverloaded(unitId$ | async, units$ | async)">></button>
+    </div>
+  </div>
+  <ng-container *ngIf="unit$ | async as unit; else noUnit">
+    <div class="items pt-4">
+      <div class="item d-inline-flex flex-column justify-content-start" *ngFor="let item of labels">
+        <label class="fw-bold fst-italic">{{ setName(item) }}</label>
+        <span>{{ print(unit[item]) }}</span>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #noUnit>
+  <div class="d-flex flex-column pt-4">
+    <h3>No unit</h3>
+    <p>No data were found, please change filtering options and try again.</p>
+  </div>
+</ng-template>

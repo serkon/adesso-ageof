@@ -2,7 +2,7 @@ import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/
 import { Unit } from '@src/app/dto';
 import { Cost } from '@src/app/pages/units/units.component';
 
-import { decrement, filterByAge, filterByCost, increment, reset, selectedUnit, setFiltered, setUnits } from './actions';
+import { decrement, filterByAge, filterByCost, getUtilById, increment, reset, selectUnit, setFiltered, setUnits } from './actions';
 
 /**
  * Counter Reducer
@@ -27,12 +27,14 @@ interface UnitState {
   selected: Unit | null;
   units: Unit[];
   filtered: Unit[];
+  index: number;
 }
 
 export const initialUnitState: UnitState = {
   selected: null as Unit | null,
   units: [] as Unit[],
   filtered: [] as Unit[],
+  index: 0 as number,
 };
 
 const filterByAgeFn = (state: UnitState, action: { ages: string[] }): UnitState => {
@@ -43,11 +45,6 @@ const filterByAgeFn = (state: UnitState, action: { ages: string[] }): UnitState 
 
 export const unitReducer = createReducer(
   initialUnitState,
-  on(selectedUnit, (state, action): UnitState => {
-    state.selected = action.value;
-
-    return state;
-  }),
   on(setUnits, (state, action): UnitState => ({ ...state, units: action.value, filtered: action.value })),
   on(setFiltered, (state, action): UnitState => ({ ...state, filtered: action.value })),
   on(filterByAge, filterByAgeFn),
@@ -58,8 +55,16 @@ export const unitReducer = createReducer(
 
     return { ...state, filtered };
   }),
+  on(selectUnit, (state, action): UnitState => ({ ...state, selected: action.value, index: action.index })),
+  on(getUtilById, (state, action): UnitState => {
+    const index = 'increment' === action.value ? state.index + 1 : state.index - 1;
+
+    return { ...state, index, selected: state.filtered[index] };
+  }),
 );
 
 export const selectUnitState = createFeatureSelector<UnitState>('unit');
 export const selectUnits = createSelector(selectUnitState, (state: UnitState) => state.units);
 export const selectFiltered = createSelector(selectUnitState, (state: UnitState) => state.filtered);
+export const selectSelectedUnit = createSelector(selectUnitState, (state: UnitState) => state.selected);
+export const selectSelectedUnitIndex = createSelector(selectUnitState, (state: UnitState) => state.index);

@@ -49,6 +49,7 @@ export interface Unit {
   armor: string;
   attack_bonus?: string[];
   accuracy?: string;
+  [key: string]: any;
 }
 
 export interface Units {
